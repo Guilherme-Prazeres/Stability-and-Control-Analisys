@@ -1,0 +1,84 @@
+aircraft_name: CimAero_v1
+mass_properties:
+  MTOW_kg: 40.0
+  empty_weight_kg: 22.0
+  payload_weight_kg: 6.0
+  fuel_weight_kg: 12.0
+  wing_loading_kg_per_m2: 23.97
+  xcg_percent_mac: 29.05
+  weight_distribution:
+    wing_kg: 6.6
+    fuselage_kg: 7.26
+    horizontal_stabilizer_kg: 2.2
+    vertical_stabilizer_kg: 1.1
+    propulsion_group_kg: 3.388
+    landing_gear_kg: 1.45
+components:
+  wing:
+    aspect_ratio: 9
+    taper_ratio: 1
+    incidence_angle_deg: 1.0
+    airfoil: FX76-MP-120
+    aerodynamics:
+      cl_max: 1.7
+    aileron:
+      aileron_chord_percentage: 0.14
+      start_eta: 0.43
+      end_eta: 0.94
+      start_pos: 0.8332123399856609
+      end_pos: 1.8214409292709794
+      chord: 0.06028409694986693
+      span_m: 0.51
+      area_m2: 0.06148977888886427
+      area_ratio_Sa_Sw: 0.03684774999915191
+    area_m2: 1.668752607425949
+    span_m: 3.875406232491446
+    root_chord_m: 0.43060069249904953
+    tip_chord_m: 0.43060069249904953
+    CMA_m: 0.4306006924990495
+    aerodynamic_center_local_x_mac: 0.10765017312476237
+  fuselage:
+    height_m: 0.38
+    width_m: 0.3
+    length_m: 1.3
+    fineness_ratio: 4.333333333333334
+  horizontal_stabilizer:
+    span_m: 1.1
+    root_chord_m: 0.28
+    taper_ratio: 1
+    aspect_ratio: 4.0
+    tail_arm_m: 1.5
+    incidence_angle_deg: -5.0
+    airfoil: NACA 0012
+    elevator:
+      chord_percentage: 0.3
+      span_percentage: 0.9
+      chord_m: 0.084
+      span_m: 0.9900000000000001
+    area_m2: 0.30800000000000005
+    tip_chord_m: 0.28
+    CMA_m: 0.28
+    volume_coefficient: 0.6429471777977022
+  vertical_stabilizer:
+    span_m: 0.92
+    root_chord_m: 0.23
+    taper_ratio: 1
+    aspect_ratio: 4.0
+    tail_arm_m: 1.5
+    airfoil: NACA 0012
+    rudder:
+      chord_percentage: 0.4
+      span_percentage: 1
+      span_m: 0.92
+      root_chord_m: 0.09200000000000001
+      tip_chord_m: 0.09200000000000001
+      CMA_m: 0.092
+      mean_chord_m: 0.09200000000000001
+    area_m2: 0.2116
+    CMA_m: 0.23
+    volume_coefficient: 0.049079229012263255
+  propeller:
+    diameter_in: 32
+    pitch_in: 10
+    block_factor: 0.7
+    block_distance_m: 0.569

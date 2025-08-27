@@ -1,0 +1,77 @@
+# =========================================================
+# Arquivo de Configuração Geométrica
+# =========================================================
+
+aircraft_name: "CimAero_v1"
+
+# --- Propriedades de Massa e Cargas ---
+mass_properties:
+  # Pesos principais
+  MTOW_kg: 40.0
+  empty_weight_kg: 22.0    # We (55% MTOW)
+  payload_weight_kg: 6.0   # Wp (15% MTOW)
+  fuel_weight_kg: 12.0     # Wl (30% MTOW)
+
+  # Carga alar
+  wing_loading_kg_per_m2: 23.97
+
+  # Posição do Centro de Gravidade
+  xcg_percent_mac: 29.05
+
+  # Divisão de pesos por componente
+  weight_distribution:
+    wing_kg: 6.6
+    fuselage_kg: 7.26
+    horizontal_stabilizer_kg: 2.2
+    vertical_stabilizer_kg: 1.1
+    propulsion_group_kg: 3.388 # GNP - Grupo motopropulsor
+    landing_gear_kg: 1.45      # TDP - Trem de pouso
+
+# --- Componentes da Aeronave ---
+components:
+  wing:
+    aspect_ratio: 9
+    taper_ratio: 1
+    incidence_angle_deg: 1.0
+    airfoil: "FX76-MP-120"
+    aerodynamics:
+      cl_max: 1.7
+    aileron:
+      aileron_chord_percentage: 0.14 # corda do aileron é uma fração da CMA da asa
+      start_eta: 0.43 # Posição em porcentagem da semi-envergadura do início do aileron
+      end_eta: 0.94   # Posição em porcentagem da semi-envergadura do fim do aileron
+
+  fuselage:
+    height_m: 0.380
+    width_m: 0.300
+    length_m: 1.300 # Xf
+
+  horizontal_stabilizer:
+    span_m: 1.100
+    root_chord_m: 0.280
+    taper_ratio: 1
+    # area_m2: 0.308
+    aspect_ratio: 4.0
+    tail_arm_m: 1.500 # Lhtx = Distância longitudinal do CG da aeronave ao CA da empenagem
+    incidence_angle_deg: -5.0
+    airfoil: "NACA 0012"
+    elevator:
+      chord_percentage: 0.3
+      span_percentage: 0.9
+
+  vertical_stabilizer:
+    span_m: 0.92
+    root_chord_m: 0.23
+    taper_ratio: 1
+    aspect_ratio: 4.0
+    tail_arm_m: 1.5
+    airfoil: "NACA 0012"
+    rudder:
+      chord_percentage: 0.4
+      span_percentage: 1
+      
+  propeller:
+    diameter_in: 32
+    pitch_in: 10
+    block_factor: 0.7
+    block_distance_m: 0.569
