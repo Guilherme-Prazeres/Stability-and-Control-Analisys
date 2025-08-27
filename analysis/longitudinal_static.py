@@ -17,25 +17,23 @@ class LongitudinalStaticStability:
         """
         Calcula a contribuição da asa para a estabilidade estática longitudinal (Cm_alpha_asa).
         """
-        c_bar = self.wing['mean_aerodynamic_chord_m']
+        c_bar = self.wing['CMA_m']
         AR = self.wing['aspect_ratio']
         cl_alpha_2d = self.wing['aerodynamics']['cl_alpha_per_rad']
+        c_l_0 = self.wing['aerodynamics']['c_l_0']
+        c_m_0 = self.wing['aerodynamics']['c_m_0']
+        x_cg = c_bar * self.mass_props['xcg_percent_mac']
+        x_ac = 0.25 * c_bar
         
         C_L_alpha_wing_rad = cl_alpha_2d / (1 + (cl_alpha_2d / (math.pi * AR)))
 
-        x_lemac = self.wing['x_lemac_m']
-        xcg_frac = self.mass_props['xcg_percent_mac'] / 100.0
-        x_cg = x_lemac + xcg_frac * c_bar
+        C_m0_w = c_m_0 + c_l_0 * ((x_cg/c_bar) - (x_ac/c_bar))
 
-        x_ac_wing_frac = self.wing['aerodynamic_center_local_x_mac']
-        x_ac_wing = x_lemac + x_ac_wing_frac * c_bar
-
-        Cm_alpha_wing_rad = C_L_alpha_wing_rad * (x_cg - x_ac_wing) / c_bar
+        C_ma_w = C_L_alpha_wing_rad * ((x_cg/c_bar) - (x_ac/c_bar)) 
 
         results = {
             'C_L_alpha_wing_per_rad': C_L_alpha_wing_rad,
-            'x_cg_m': x_cg,
-            'x_ac_wing_m': x_ac_wing,
-            'Cm_alpha_wing_per_rad': Cm_alpha_wing_rad
+            'C_m0_w': C_m0_w,
+            'C_ma_w': C_ma_w
         }
         return results

@@ -16,7 +16,7 @@ mass_properties:
   wing_loading_kg_per_m2: 23.97
 
   # Posição do Centro de Gravidade
-  xcg_percent_mac: 29.05
+  xcg_percent_mac: 30
 
   # Divisão de pesos por componente
   weight_distribution:
@@ -36,6 +36,10 @@ components:
     airfoil: "FX76-MP-120"
     aerodynamics:
       cl_max: 1.7
+      cl_alpha_per_rad: 0.1605
+      C_l_0: 0.1547
+      C_m_0: -0.2164
+
     aileron:
       aileron_chord_percentage: 0.14 # corda do aileron é uma fração da CMA da asa
       start_eta: 0.43 # Posição em porcentagem da semi-envergadura do início do aileron

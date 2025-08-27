@@ -11,9 +11,6 @@ def run_longitudinal_static_analysis(aircraft_config_file):
 
     # 2. Crie uma instância do analisador de estabilidade, passando a aeronave.
     stability_analyzer = LongitudinalStaticStability(my_aircraft)
-
-    # 3. Calcule a contribuição da asa.
-    wing_stability = stability_analyzer.calculate_wing_contribution()
     
     # Opcional: Salvar o arquivo com todos os cálculos geométricos
     my_aircraft.save_results_to_yaml('Aircraft_calculated.yaml')
